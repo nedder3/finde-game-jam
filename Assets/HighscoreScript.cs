@@ -30,23 +30,19 @@ public class HighscoreScript : MonoBehaviour
             {
                 highscoreRecord = puntos;
                 textoHigscore.text = highscoreRecord.ToString();
+
+                //Idealmente no estar guardando el json en cada colision. Podria ser cuando se termine el juego
                 SaveToJson();
             }
         }
-
-
     }
 
     public void SaveToJson()
     {
         HighscoreDATA data = new HighscoreDATA();
-
         data.Highscore = highscoreRecord.ToString();
-
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(Application.dataPath + "/HighscoreDATAfile.json", json);
-
-        Debug.Log("Entro a guardar JSON :");
     }
 
     public void LoadFromJson()
@@ -54,6 +50,8 @@ public class HighscoreScript : MonoBehaviour
         string json = File.ReadAllText(Application.dataPath + "/HighscoreDATAfile.json");
         HighscoreDATA data = JsonUtility.FromJson<HighscoreDATA>(json);
 
-        Debug.Log(data.Highscore);
+        //Actualizamos con la data storeada
+        highscoreRecord = int.Parse(data.Highscore);
+        textoHigscore.text = data.Highscore;
     }
 }
