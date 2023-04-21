@@ -3,47 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HighscoreScript : MonoBehaviour
-{
-    public Text textoPuntos;
-    public Text textoHigscore;
-   private int puntos =0 ;
-   private int highscoreRecord=4;
+///
+/// Si no se usa se puede eliminar esta clase? 
+///
+
+// public class HighscoreScript : MonoBehaviour
+// {
+//     public Text textoPuntos;
+//     public Text textoHigscore;
+//    private int puntos =0 ;
+//    private int highscoreRecord=4;
 
 
-     private void Awake() {
-        textoHigscore.text=highscoreRecord.ToString();
-    }
+//      private void Awake() {
+//         textoHigscore.text=highscoreRecord.ToString();
+//     }
 
-   private void OnTriggerEnter2D(Collider2D other) 
-    {
+//    private void OnTriggerEnter2D(Collider2D other) 
+//     {
         
 
-            //intento pescar pez
+//             //intento pescar pez
 
-        if(other.CompareTag("pez"))
-        {
-            //si atrapo un pez sumo punto
-            Debug.Log(puntos++);
+//         if(other.CompareTag("pez"))
+//         {
+//             //si atrapo un pez sumo punto
+//             Debug.Log(puntos++);
             
             
-            //incremento higscore
+//             //incremento higscore
             
 
-            textoPuntos.text=puntos.ToString();
-            textoHigscore.text=highscoreRecord.ToString();
+//             textoPuntos.text=puntos.ToString();
+//             textoHigscore.text=highscoreRecord.ToString();
             
-            //actualizo highscore
-            if(puntos>=highscoreRecord)
-            {
-                highscoreRecord=puntos;
-                highscoreRecord++;
+//             //actualizo highscore
+//             if(puntos>=highscoreRecord)
+//             {
+//                 highscoreRecord=puntos;
+//                 highscoreRecord++;
 
-            }
-        }
+//             }
+//         }
 
         
-    }
+//     }
     
     
-}
+// }
