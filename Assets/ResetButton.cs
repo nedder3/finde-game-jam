@@ -8,11 +8,8 @@ public class ResetButton : MonoBehaviour
     public int puntos;
     public GameObject pescador;
 
-   public void ResetPuntaje() {
-        
-        puntos = 0;
+    public void ResetPuntaje() 
+    {     
+       puntos = 0;
     }
-    
-
-
 }
